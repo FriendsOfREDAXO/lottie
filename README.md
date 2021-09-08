@@ -19,6 +19,8 @@ Das AddOn ermöglicht im REDAXO-Medienpool eine Vorschau von .json-Dateien als L
 - Lottie bindet sich in die Detailseite des Medienpools ein
 - Konfigurationsmöglichkeit, ob alle .json-Dateien im Medienpool als Lottie-Animation behandelt werden sollen, oder nur in bestimmten Ordnern des Medienpools
 
+![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/lottie/assets/screenshot-medienpool.png)
+
 ## Lottie-Player
 
 ### Lottie-Files im Medienpool
