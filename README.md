@@ -8,13 +8,13 @@ Das AddOn stellt den Lottie-Player für das Abspielen von [Lottie-Animationen](h
 Das AddOn ermöglicht im REDAXO-Medienpool eine Vorschau von .json-Dateien als Lottie-Animation und liefert die nötigen Assets (.js-Files) sowie eine PHP-Methode zur einfachen Einbindung von Lottie-Playern im Frontend.
 
 ## AddOn Features
-###Für das Frontend
+### Für das Frontend
 - Statische PHP Methode zur Ausgabe der Animationen
 - Player-Optionen können je Ausgabe definiert werden
 - Eigenes Lottie-Player-HTML kann per Fragment eingebracht werden
 - Notwendige Assests werden im Assets-Ordner des AddOns mitgeliefert (Einbindung im Frontend muss manuell erfolgen)
 
-###Für das Backend
+### Für das Backend
 - Automatische Einbindung des Lottie-Players im Backend
 - Lottie bindet sich in die Detailseite des Medienpools ein
 - Konfigurationsmöglichkeit, ob alle .json-Dateien im Medienpool als Lottie-Animation behandelt werden sollen, oder nur in bestimmten Ordnern des Medienpools
