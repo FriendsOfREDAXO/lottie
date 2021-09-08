@@ -3,13 +3,7 @@
 
 Das AddOn stellt den Lottie-Player für das Abspielen von [Lottie-Animationen](https://lottiefiles.com/) im .json-Format zur Verfügung.
 
-
-<foreignObject width="100" height="100">
-    <div xmlns="http://www.w3.org/1999/xhtml">
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_3vbOcw.json"  background="transparent"  speed="1"  style="width: 400px; height: 400px;"  loop autoplay></lottie-player>
-    </div>
-</foreignObject>
+![Screenshot](https://raw.githubusercontent.com/FriendsOfREDAXO/lottie/assets/titel-animation.gif)
 
 Das AddOn ermöglicht im REDAXO-Medienpool eine Vorschau von .json-Dateien als Lottie-Animation und liefert die nötigen Assets (.js-Files) sowie eine PHP-Methode zur einfachen Einbindung von Lottie-Playern im Frontend.
 
