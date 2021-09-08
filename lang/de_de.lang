@@ -1,0 +1,14 @@
+lottie_title = Lottie-Player
+lottie_information = Info
+lottie_config = Konfiguration
+config_save = Speichern
+config_saved = Einstellungen wurden gespeichert
+settings = Einstellungen
+media_categories = Medienpool-Kategorien
+overall_checkbox_label = Jede <code>.json</code>-File im Medienpool als Lottie-File darstellen?
+config_legend1 = Wie werden <code>.json</code>-Dateien im Medienpool dargestellt?
+config_legend2 = In welchen Medienpool-Kategorien sollen <code>.json</code>-Dateien als Lottie-Animationen dargestellt werden?
+
+overall_yes = Ja – Jede .json-File im Medienpool soll als Lottie-Animation dargestellt werden
+overall_no = Nein – .json-Files sollen nur in bestimmten Medienpool-Kategorien als Lottie-Animation dargestellt werden
+overall_placeholder = Bitte wählen

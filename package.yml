@@ -1,0 +1,18 @@
+package: lottie
+version: '1.0'
+author: 'FriendsOfRedaxo'
+compile: 0
+
+page:
+  title: 'Lottie-Player'
+  perm: lottie[]
+  pjax: true
+  icon: rex-icon fa fa-play
+  subpages:
+    info: { title: 'translate:lottie_information', subPath: README.md }
+    config: { title: 'translate:lottie_config' }
+
+requires:
+    packages:
+    
+    redaxo: '>=5.0'
