@@ -25,9 +25,16 @@ if (rex::isBackend() && is_object(rex::getUser())) {
 
     if(is_object($ckat)) {
         $ckatId = $ckat->getId();
+    } else {
+        $ckatId = 0; // Damit bei Media-Root-Kategorien kein undefined index kommt
     }
     // Nur fuer die ausgewaehlten Media-Kategorien json-Files als Lotties behandeln
-    if($lottie->getConfig('overall') == 0 && in_array($ckatId, $lottie->getConfig('categories'))) {
-        rex_extension::register('MEDIA_DETAIL_SIDEBAR', 'lottie_mediapool::show_sidebar');
+    if($lottie->getConfig('categories')) {
+        /* Nur wenn es auch Werte in der Config gibt, PHP 8 wirft sonst einen
+        * Whoops, PHP 7 gibt ne Warning
+        */
+        if ($lottie->getConfig('overall') == 0 && in_array($ckatId, $lottie->getConfig('categories'))) {
+            rex_extension::register('MEDIA_DETAIL_SIDEBAR', 'lottie_mediapool::show_sidebar');
+        }
     }
 }
