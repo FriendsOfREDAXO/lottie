@@ -56,7 +56,7 @@ echo $mform->show();
 #### Ausgabe über `rex_lottie::outputLottie($jsonFile, $options)`
 
 ```php
-$lottie = rex_lottie::outputLottie('REX_MEDIA[1]','autoplay,loop');
+$lottie = rex_lottie::outputLottie('REX_MEDIA[1]','autoplay loop');
 ```
 > Beispiel mit den Parametern autoplay und loop.
 
