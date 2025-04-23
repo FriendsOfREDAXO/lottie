@@ -8,6 +8,13 @@ media_categories = Media pool categories
 overall_checkbox_label = Present each <code>.json</code> file in media pool as a lottie file?
 config_legend1 = How are <code>.json</code> files represented in the media pool?
 config_legend2 = In which media pool categories should <code>.json</code> files be rendered as Lottie animations?
+media_list_thumbnail_checkbox_label = Present <code>.json</code> files as Lottie in the list view of the mediapool
+media_list_thumbnail_legend = Mediapool: List view
+frontend_include_legend = Frontend integration
+frontend_include_label = Automatically include Lottie player
+mediapool_allow_json_upload_legend = Media pool: Upload of <code>.json</code> files
+mediapool_allow_json_upload_label = Allow upload of <code>.json</code> files in the media pool
+mediapool_allow_json_description = Since Media Pool 2.13.0, the upload of <code>.json</code> files in the media pool is no longer possible by default due to XSS security reasons.<br>The Lottie add-on can re-enable this file extension. To do so, the checkbox "<i>Enable JSON upload</i>" must be checked in the add-on configuration.
 
 overall_yes = Yes - Every .json file in the media pool should be rendered as a Lottie animation.
 overall_no = No - .json files should only be rendered as Lottie animations in specific media pool categories.

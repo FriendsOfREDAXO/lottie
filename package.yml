@@ -1,5 +1,5 @@
 package: lottie
-version: '1.0.2'
+version: '1.1.0'
 author: 'FriendsOfRedaxo'
 compile: 0
 
@@ -14,5 +14,5 @@ page:
 
 requires:
     packages:
-    
     redaxo: '>=5.0'
+    mediapool: '>=2.13.0'

@@ -6,6 +6,9 @@ $buttons = '';
 // save settings
 if (rex_post('formsubmit', 'string') == '1') {
     $configs = [
+        ['frontend_include', 'int'],
+        ['mediapool_allow_json_upload', 'int'],
+        ['media_list_thumbnail', 'int'],
         ['overall', 'int'],
         ['categories', 'array'],
     ];
@@ -13,9 +16,51 @@ if (rex_post('formsubmit', 'string') == '1') {
     echo rex_view::success($addon->i18n('config_saved'));
 }
 
-$content .= '<fieldset><legend>' . $addon->i18n('config_legend1') . '</legend>';
+// lottie-player im Frontend
+$content .= '<fieldset id="lottie-frontend-include"><legend>' . $addon->i18n('frontend_include_legend') . '</legend>';
+$formElements = [];
+$n = [];
+$n['label'] = '<label for="frontend-include">' . $addon->i18n('frontend_include_label');
+$n['field'] = '<input type="checkbox" id="frontend-include" name="config[frontend_include]" value="1" ' . ($this->getConfig('frontend_include') ? 'checked="checked" ' : '') . ' />';
+$formElements[] = $n;
+$fragment = new rex_fragment();
+$fragment->setVar('elements', $formElements, false);
+$content .= $fragment->parse('core/form/form.php');
+$content .= '</label>';
+$content .= '</fieldset>';
+
+// json-upload erlauben
+$content .= '<fieldset id="mediapool-allow-json-fieldset"><legend>' . $addon->i18n('mediapool_allow_json_upload_legend') . '</legend>';
+$content .= '<div class="well">';
+$content .= $addon->i18n('mediapool_allow_json_description');
+$content .= '</div>';
+$formElements = [];
+$n = [];
+$n['label'] = '<label for="mediapool-allow-json">' . $addon->i18n('mediapool_allow_json_upload_label');
+$n['field'] = '<input type="checkbox" id="mediapool-allow-json" name="config[mediapool_allow_json_upload]" value="1" ' . ($this->getConfig('mediapool_allow_json_upload') ? 'checked="checked" ' : '') . ' />';
+$formElements[] = $n;
+$fragment = new rex_fragment();
+$fragment->setVar('elements', $formElements, false);
+$content .= $fragment->parse('core/form/form.php');
+$content .= '</label>';
+$content .= '</fieldset>';
+
+// lottie-player in media_list
+$content .= '<fieldset id="lottie-media-list-thumbnail"><legend>' . $addon->i18n('media_list_thumbnail_legend') . '</legend>';
+$formElements = [];
+$n = [];
+$n['label'] = '<label for="media_list_thumbnail">' . $addon->i18n('media_list_thumbnail_checkbox_label');
+$n['field'] = '<input type="checkbox" id="media_list_thumbnail" name="config[media_list_thumbnail]" value="1" ' . ($this->getConfig('media_list_thumbnail') ? 'checked="checked" ' : '') . ' />';
+$formElements[] = $n;
+$fragment = new rex_fragment();
+$fragment->setVar('elements', $formElements, false);
+$content .= $fragment->parse('core/form/form.php');
+$content .= '</label>';
+$content .= '</fieldset>';
+
 
 // Overall Json wie Lottie behandeln
+$content .= '<fieldset><legend>' . $addon->i18n('config_legend1') . '</legend>';
 $formElements = [];
 $n = [];
 $n['label'] = '<label for="lottie-overall">' . $addon->i18n('overall_checkbox_label') . '</label>';
@@ -35,7 +80,7 @@ $content .= $fragment->parse('core/form/form.php');
 
 $content .= '</fieldset>';
 
-// include catgeories
+// include categories
 $content .= '<fieldset id="overall-categories"><legend>' . $addon->i18n('config_legend2') . '</legend>';
 $tableSelect = new rex_media_category_select($ignore_offlines = false);
 $tableSelect->setName('config[categories][]');

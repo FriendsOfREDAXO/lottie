@@ -23,11 +23,13 @@ Das AddOn ermöglicht im REDAXO-Medienpool eine Vorschau von .json-Dateien als L
 
 ## Lottie-Player
 
-### Lottie-Files im Medienpool
+### Lottie-Files im Medienpool (Backend)
 
-Der Lottie-Player bindet sich automatisch in der Detailseite der Medienpools ein, wenn der Dateityp eine .json-Datei ist. Damit nicht jede .json-Datei im Medienpool als Lottie-Animation dargestellt wird, kann man in der AddOn-Konfiguration eine oder mehrere Medienpool-Kategorien definieren, in denen .json-Dateien als Lottie-Animationen dargestellt werden.
+Der Lottie-Player bindet sich automatisch in der Detailseite oder Übersichtsliste des Medienpools ein, wenn der Dateityp eine `.json`-Datei ist. Damit nicht jede `.json`-Datei im Medienpool als Lottie-Animation dargestellt wird, kann man in der AddOn-Konfiguration eine oder mehrere Medienpool-Kategorien definieren, in denen `.json`-Dateien als Lottie-Animationen dargestellt werden.
 
-### Einbindung im Frontend
+> Seit dem Medienpool 2.13.0 ist der Upload von `.json`-Dateien im Medienpool aus XSS-Sicherheitsgründen nicht mehr per default möglich. Das Lottie-AddOn kann diese Dateiendung aber wieder erlauben. Dazu muss in der AddOn-Konfiguration die Checkbox "<i>JSON-Upload aktivieren</i>" gesetzt werden.
+
+### Einbindung im Frontend/Module/Templates
 
 Die nötigen Dateien findet man im Assets-Ordner.
 Eigene CSS und JS sollten nach Möglichkeit an anderer Stelle abgelegt werden, um Probleme nach einem Update zu vermeiden.
@@ -36,10 +38,11 @@ Lottie benötigt eine JS-Datei, die mitgeliefert wird (`lottie-player.js`).
 
 Weitere Informationen und Resourcen zur Konfiguration von Lottie und z.B. Interaktivität bei Scroll oder Hover etc. gibt es auf [lottiefiles.com](https://lottiefiles.com).
 
-#### JS für Lottie
+#### JS für den Lottie-Player
 
+Das JS-Skript für den Lottie-Player kann entweder automatisch im Frontend im `<head>`-Bereich eingebunden werden, in dem die entsprechende Checkbox in der Konfiguration gesetzt wird, oder manuell mit dem untenstehenden Code-Snippet eingebunden werden.
 ```php
-<script src="<?= rex_url::base('assets/addons/lottie/vendor/lottie/lottie-player.js') ?>"></script>
+<script src="<?= rex_addon::get('lottie')->getAssetsUrl('vendor/lottie/lottie-player.js') ?>"></script>
 ```
 
 ### Modul-Beispiel, hier mit MFORM
@@ -58,17 +61,17 @@ echo $mform->show();
 ```php
 $lottie = rex_lottie::outputLottie('REX_MEDIA[1]','autoplay,loop');
 ```
-> Beispiel mit den Parametern autoplay und loop.
+> Beispiel mit den Parametern `autoplay` und `loop`.
 
 #### Eigenes Lottie-Player-HTML-Fragment
 Der HTML-Code für den Lottie-Player im Frontend kommt aus dem Fragment `lottie-player.php`. Wenn man eigenen HTML-Code in der Lottie-Player-Ausgabe haben möchte oder mehr anpassen will, ausser den Optionen, kann man dies mit einem eigenen Fragment tun.
 
-## Methoden in der rex_lottie class
+## Methoden in der `rex_lottie` class
 
 `rex_lottie::outputLottie($json,$options)`
 Erstellt einen HTML-Lottie-Player anhand einer .json-Datei.
 
-`checkMedia($filename)`
+`rex_lottie::checkMedia($filename)`
 Überprüft, ob es sich bei der Mediendatei um eine .json-Datei handelt (bool).
 
 ## Resources für Lottie
