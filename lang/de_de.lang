@@ -5,9 +5,16 @@ config_save = Speichern
 config_saved = Einstellungen wurden gespeichert
 settings = Einstellungen
 media_categories = Medienpool-Kategorien
-overall_checkbox_label = Jede <code>.json</code>-File im Medienpool als Lottie-File darstellen?
+overall_checkbox_label = Jede <code>.json</code>-File im Medienpool als Lottie-File behandeln?
 config_legend1 = Wie werden <code>.json</code>-Dateien im Medienpool dargestellt?
 config_legend2 = In welchen Medienpool-Kategorien sollen <code>.json</code>-Dateien als Lottie-Animationen dargestellt werden?
+media_list_thumbnail_checkbox_label = In Listenansicht des Medienpools <code>.json</code>-Dateien als Lottie darstellen
+media_list_thumbnail_legend = Medienpool: Listenansicht
+frontend_include_legend = Frontend-Einbindung
+frontend_include_label = Lottie-Player automatisch einbinden
+mediapool_allow_json_upload_legend = Medienpool: Upload von <code>.json</code>-Dateien
+mediapool_allow_json_upload_label = Upload von <code>.json</code>-Dateien im Medienpool erlauben
+mediapool_allow_json_description = Seit dem Medienpool 2.13.0 ist der Upload von <code>.json</code>-Dateien im Medienpool aus XSS-Sicherheitsgründen nicht mehr per default möglich.<br>Das Lottie-AddOn kann diese Dateiendung aber wieder erlauben.
 
 overall_yes = Ja – Jede .json-File im Medienpool soll als Lottie-Animation dargestellt werden
 overall_no = Nein – .json-Files sollen nur in bestimmten Medienpool-Kategorien als Lottie-Animation dargestellt werden
