@@ -13,6 +13,6 @@ page:
     config: { title: 'translate:lottie_config' }
 
 requires:
-    packages:
     redaxo: '>=5.0'
-    mediapool: '>=2.13.0'
+    packages:
+        mediapool: '>=2.13.0'
